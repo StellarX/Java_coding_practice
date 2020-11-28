@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,14 +30,14 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user/login")
-    public Map<String, Object> login(User user) {
+    public Map<String, Object> login(User user, HttpServletResponse response) {
         log.info("用户名：{}", user.getName());
         log.info("password: {}", user.getPassword());
 
         Map<String, Object> map = new HashMap<>();
 
         try {
-            User userDB = userService.login(user);
+            User userDB = userService.login(user); // 从数据库中查询user是否存在
 
             Map<String, String> payload = new HashMap<>();
             payload.put("id", userDB.getId());
@@ -44,7 +45,7 @@ public class UserController {
             String token = JWTUtils.getToken(payload);
 
             map.put("state", true);
-            map.put("msg", "登录成功");
+            map.put("msg", "login success");
             map.put("token", token);
             return map;
         } catch (Exception e) {
@@ -68,7 +69,7 @@ public class UserController {
         //TODO 业务逻辑
         Map<String, Object> map = new HashMap<>();
         map.put("state", true);
-        map.put("msg", "请求成功");
+        map.put("msg", "success");
         return map;
     }
 
