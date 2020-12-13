@@ -21,6 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/designpattern" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/enumeration" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/blockqueue" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
@@ -55,5 +56,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:unknown" level="project" />
   </component>
 </module>

@@ -27,8 +27,8 @@ public class AdjGraph {
 		Arcnode nextarc;
 		Arcnode(int weight) {this.weight = weight;}
 	}
-	
-	
+
+	static int[] dfs_visited = new int[n];
 	public static void main(String[] args) {
 		int[][] arr = {
 			{0, 1,   1,   1},
@@ -38,11 +38,38 @@ public class AdjGraph {
 		};
 		Graph g = createAdj(arr, n, e);
 		dispAdj(g);
-		bfs(g, 1);
+//		bfs(g, 1);
 		System.out.println();
-		dfs(g, 1);
+		System.out.println("res: " + isTree(g)); //todo some problems occurred
+//		dfs(g, 1);
 	}
-	
+	static int vn = 0, en = 0;
+	static int isTree(Graph graph){
+
+		for(int i = 0; i < graph.n; i++) {
+			dfs_visited[i] = 0;
+		}
+		dfs2(graph, 0, vn, en);
+		System.out.println();
+		System.out.println("vn: " + vn + "  en: " + en);
+		if (vn == graph.n && en/2 == graph.n - 1) return 1;
+		else return 0;
+	}
+	static void dfs2(Graph graph, int v, int vn, int en){
+		dfs_visited[v] = 1;
+		vn++;
+
+//		System.out.print(v + " ");
+		Arcnode a = graph.adjlist.get(v).firstarc;
+		while(a != null) {
+			en++;
+			System.out.println("en: " + en);
+			if(dfs_visited[a.no] == 0) {
+				dfs2(graph, a.no, vn, en);
+			}
+			else a = a.nextarc;
+		}
+	}
 	public static Graph createAdj(int[][] arr, int n, int e) {
 		Graph g = new Graph(n, e, new ArrayList<Vnode>());
 		for(int i = 0; i < n; i++) {
@@ -95,7 +122,7 @@ public class AdjGraph {
 		}
 	}
 
-	static int[] dfs_visited = new int[n];
+
 	public static void dfs(Graph g, int v) {
 		dfs_visited[v] = 1;
 		System.out.print(v + " ");
