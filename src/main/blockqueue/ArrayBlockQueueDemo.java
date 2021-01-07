@@ -1,16 +1,15 @@
-import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @briefing Arrayblockingqueue demo
+ * @briefing Array blocking queue test
  * @author space
- * @date 2020/10/4 11:50
+ * @date 2021/01/07 22:48
+ * @location ChengDu,SiChuan,China
  */
 public class ArrayBlockQueueDemo {
-    public static BlockingQueue<String> blockingQueue = new java.util.concurrent.ArrayBlockingQueue<String>(3);
+    public static BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(3);
     public static void main(String[] args) throws InterruptedException {
 //        exceptionMethod();
 //        booleanMethod();
@@ -19,27 +18,25 @@ public class ArrayBlockQueueDemo {
 
     }
 
-
     /**
      * test methods that will block just a while if something wrong
      */
     public static void timeoutMethod() throws InterruptedException {
         System.out.println(blockingQueue.offer("a", 3, TimeUnit.SECONDS));
-        System.out.println(blockingQueue.offer("a", 3, TimeUnit.SECONDS));
-        System.out.println(blockingQueue.offer("a", 3, TimeUnit.SECONDS));
-        System.out.println(blockingQueue.offer("a", 3, TimeUnit.SECONDS));
+        System.out.println(blockingQueue.offer("b", 3, TimeUnit.SECONDS));
+        System.out.println(blockingQueue.offer("c", 3, TimeUnit.SECONDS));
+        System.out.println(blockingQueue.offer("d", 10, TimeUnit.SECONDS));// block for 10s
         System.out.println(blockingQueue.poll(3, TimeUnit.SECONDS));
     }
 
     /**
      * test methods that will block if something wrong
-     * @throws InterruptedException
      */
     public static void blockMethod() throws InterruptedException {
-//        blockingQueue.put("a");
-//        System.out.println(blockingQueue.take());
-//        System.out.println(blockingQueue.take());
-//        blockingQueue.put("b");
+        blockingQueue.put("a");
+        System.out.println(blockingQueue.take());
+        System.out.println(blockingQueue.take());//will block/wait, because there is no more element in queue.
+        blockingQueue.put("b");
     }
 
     /**
@@ -68,6 +65,6 @@ public class ArrayBlockQueueDemo {
         System.out.println(blockingQueue.add("3"));
 //        System.out.println(blockingQueue.add("3")); // throw exception: IllegalStateException: Queue full
 //        System.out.println(blockingQueue.remove());
-        System.out.println(blockingQueue.element());
+        System.out.println(blockingQueue.element());//return first element, that is 1.
     }
 }

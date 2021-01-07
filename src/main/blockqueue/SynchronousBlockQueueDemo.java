@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/5 22:33
  */
 public class SynchronousBlockQueueDemo {
-    public static SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<Integer>();
+    public static SynchronousQueue<Integer> synchronousQueue = new SynchronousQueue<>();
     public static void main(String[] args) {
         testBlock();
 
@@ -21,25 +21,25 @@ public class SynchronousBlockQueueDemo {
      */
     public static void testBlock(){
         new Thread(() -> {
-            System.out.println("add 1");
+            System.out.println(Thread.currentThread().getName() + " add 1");
             try {
                 synchronousQueue.put(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("add 2");
+            System.out.println(Thread.currentThread().getName() + " add 2");
             try {
                 synchronousQueue.put(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("add 3");
+            System.out.println(Thread.currentThread().getName() + " add 3");
             try {
                 synchronousQueue.put(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }, "aaa").start();
+        }, "AAA").start();
 
         new Thread(() -> {
             try {
@@ -48,7 +48,7 @@ public class SynchronousBlockQueueDemo {
                 e.printStackTrace();
             }
             try {
-                System.out.println(synchronousQueue.take());
+                System.out.println(Thread.currentThread().getName() + " take " + synchronousQueue.take());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -58,7 +58,7 @@ public class SynchronousBlockQueueDemo {
                 e.printStackTrace();
             }
             try {
-                System.out.println(synchronousQueue.take());
+                System.out.println(Thread.currentThread().getName() + " take " + synchronousQueue.take());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -68,11 +68,11 @@ public class SynchronousBlockQueueDemo {
                 e.printStackTrace();
             }
             try {
-                System.out.println(synchronousQueue.take());
+                System.out.println(Thread.currentThread().getName() + " take " + synchronousQueue.take());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }, "bbb").start();
+        }, "BBB").start();
     }
 
 }
