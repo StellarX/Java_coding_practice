@@ -183,12 +183,12 @@ public class RSAUtils {
             KeyPair keyPair = getKeyPair();
 //            String privateKey = new String(Base64Utils.encoder(keyPair.getPrivate().getEncoded()));
 //            String publicKey = new String(Base64Utils.encoder(keyPair.getPublic().getEncoded()));
-            String privateKey = "MIICeQIBADANBgkqhkiG9w0BAQEFAASCAmMwggJfAgEAAoGBAI1GEm+ldIOGBBvdBvlfaffwdtQ4ns2tBdu7cQOSFIDzlaTlg4voS85Xk5k+pvuWjIwMBjpGo0DaD8a6oMBqfc+mVlqwoh3CSvfN5mZ/uNSESZ/UOKyKyUDW581nGGp1+DtG85DvnC2eSHa+Bw0ansoMXXwu4jUe6lkV8+IlFEAlAgMBAAECgYEAg494xb34Ji9cjjIkN4DSZ1Ho5zMfN/xkEz+YPDICpB+zAM+31EdsqOjHjBNbX7nQgu8Dsatsho1L2c6cuvOw2pWDvjg6UebjRZVcsqtOneSJ4KOEBmASRIzrdDnywe/CZ3GvaBNJ+v1VmOiHnLF9cdYc/54m4PMVSEX0N8iE8yECQQDWvhBGYdt1irLuX7iREYv3u2sOftkoDXyGAsgg/eqCGqtIEnau6oCv7Lkgj/CmfPVZSkIeuV1RyTbek+LwdD2JAkEAqGqCAqAnt8M/2X0oVrdAWRSYif38/t/WdPFhpkxQs9vavASnF25/fE8n6N+Y8ca8T1Dc/R5Dh/WtHFsHBFnCvQJBAIO0kIDKVfJSfgnLdYSr8V+geDmsvP1ewCflHt91PFZNiw2qHVaMhx7fHnAFOEC0VTpNXB5B7CVUNq3un/qAIJkCQQCLo7vmd2pXKHHRX7/Jnqmg8r3DdK+HmIqVbeqcWxxy9LC5QlZUzE6yAGPD51lF5pUOYqrIyIYPvfjp0OPRjKc1AkEA0bzDpIHM+x6pNOSsJtingeieouMCwEncouGg8PIWhkgZBXiq2s2wbtA1+805jLkXiaiDWIwQMSOk48Xthy4rng==";
-            String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDet7xWZtSnLcZkrCH1NRF1okaugAvwav3JBUsuxLRrH1X9FUyjRSZUBnVP+7ehf/IeCiUGoNpSZN210dzWCMa3mUdRQtw+B1hpNm9K280gVDuoqwj94D2z5t+N10CrO157sie7sIu8yhjavC47V3jqABA0HvDNMV1XW3xgVL3nKwIDAQAB";
+            String privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKcegglU6V3yV7eVE2qoDNsa1eJr1RtWSbmic0PpEWFqlW5cU/9QUKGG9xiokVHNcS40NPlE32XixsHodDRE2hmDd+M1jhcQi7NPFIpN8+TkcAbcGjhlXOpMN2/XWQewgvUFQ1e9f62P8PGZNFT037P2iDDQVmfm25ZwCeoWki3PAgMBAAECgYB5hxv1AUR7RwI2xDfMdcxzgP5MmzHroUIXtmSv28sB1mo4SPfkUFlyPR1vVxXmMMm/WcO0CTuTcegrloj6gZ8/hCt1cOT1xCN5sB0vc/bj+hS+ZLEVLBuKpGq8I0RCWAOazeOHRz27JD1Jreuu+W5ME6hgCitFMgmYrIvAR4SKoQJBAOQ9woBq+liWMa+b/RGD6Q53xApV0B/Nk4RzGDxkNq9qmymAbANr73zuRk3A0cRMVHEBGLz+H99031iul3nQoecCQQC7cbnZo/O0sng5jlzdLO+HlVtAo9Wp2A5GTcmyvVnvj/5neZ/VKoQaosPQo2Pgx204LJWIKNT+i2kCQTkXI2fZAkEAsZjI5snXIOVFpiKXqXBeAU758RzSxFxfQ/mWyy8jSh2GvKVb5tGu2SRC+i9mSfsm3YN/71dCD8tOGyBHZ5cK0wJBAIVeJ6QpOW9qRIx/NKfSHyPTKzhU2eOc7JstIcPhYipHw/WP3h9nvtLM2JKMjrYSby222zYkB1iNjMuj6KED+hECQBewQIqTR4T6wX9lHoUkzewTFJQZXktDU97HcArRRdmOAJOYGoPznDfutrnAVJMx2qb0FdvhxlvS9X+YGdo8dNc=";
+            String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnHoIJVOld8le3lRNqqAzbGtXia9UbVkm5onND6RFhapVuXFP/UFChhvcYqJFRzXEuNDT5RN9l4sbB6HQ0RNoZg3fjNY4XEIuzTxSKTfPk5HAG3Bo4ZVzqTDdv11kHsIL1BUNXvX+tj/DxmTRU9N+z9ogw0FZn5tuWcAnqFpItzwIDAQAB";
             System.out.println("私钥:" + privateKey);
             System.out.println("公钥:" + publicKey);
             // RSA加密
-            String data = "stu";
+            String data = "1234";
             String encryptData = encrypt(data, getPublicKey(publicKey));
             System.out.println("加密后内容:" + encryptData);
             // RSA解密

@@ -7,6 +7,16 @@
     <facet type="web" name="Web">
       <configuration>
         <webroots />
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/producer_consumer" />
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/jucdemo" />
+          <root url="file://$MODULE_DIR$/src/main/IO" />
+          <root url="file://$MODULE_DIR$/src/main/designpattern" />
+          <root url="file://$MODULE_DIR$/src/main/enumeration" />
+          <root url="file://$MODULE_DIR$/src/main/blockqueue" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
@@ -22,10 +32,16 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/enumeration" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/blockqueue" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:unknown" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:unknown" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:core:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.auth0:java-jwt:3.10.3" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-nop:1.7.2" level="project" />
@@ -45,42 +61,12 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.0.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.1.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:unknown" level="project" />
-    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.14" level="project" />
-    <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.0" level="project" />
-    <orderEntry type="library" name="Maven: com.auth0:java-jwt:3.10.3" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-nop:1.7.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.2" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.10" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.2.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.0.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.0.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.0.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.1.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.1.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.2.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.1.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:unknown" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.14" level="project" />
   </component>
 </module>
