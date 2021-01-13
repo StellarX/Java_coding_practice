@@ -27,8 +27,14 @@ public class Practice {
     }
     static void test2(){
         ArrayList<String> strings = new ArrayList<>();
+        ListIterator<String> stringListIterator = strings.listIterator();
         strings.add(null);
         strings.add(null);
+        strings.add("jack");
+        System.out.println(strings.indexOf(null));
+//        while(stringListIterator.hasNext()){
+//            System.out.println(stringListIterator.next());
+//        }
         System.out.println(strings.size());
     }
 }
