@@ -11,22 +11,31 @@ package space.innerclass;
 public class LocalInnerClassDemo {
     public static void main(String[] args) {
         new Outer().method();
+        new Outer.Inner2();
     }
 }
 
 class Outer{
     int x = 3;
     public void method(){
-        /*
-         * local inner class 局部内部类
-         */
+
         int a = 4;
         class Inner{
+            //local inner class
             void fun(){
                 System.out.println(Outer.this.x);
                 System.out.println(a);
             }
         }
         new Inner().fun();
+    }
+    //inner class
+    static class Inner2{
+        private void fun(){
+            System.out.println("inner2 class");
+        }
+        public void fun2(){
+            System.out.println("inner2 class public method");
+        }
     }
 }
