@@ -11,7 +11,7 @@ package space.innerclass;
 public class LocalInnerClassDemo {
     public static void main(String[] args) {
         new Outer().method();
-        new Outer.Inner2();
+//        new Outer.Inner2();
     }
 }
 
@@ -22,9 +22,11 @@ class Outer{
         int a = 4;
         class Inner{
             //local inner class
+            int b = 5;
             void fun(){
                 System.out.println(Outer.this.x);
                 System.out.println(a);
+                System.out.println(b);
             }
         }
         new Inner().fun();
