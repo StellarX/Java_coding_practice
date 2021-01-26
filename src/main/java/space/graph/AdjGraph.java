@@ -1,4 +1,4 @@
-package algorithm.graph;
+package space.graph;
 
 import java.util.ArrayList;
 
