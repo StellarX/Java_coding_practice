@@ -1,5 +1,8 @@
 package space.temp;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -18,11 +21,16 @@ import java.util.List;
 public class TempTest {
     @Test
     public void test(){
-        String[] strings = new String[5];
-        for (int i = 0; i < strings.length; i++){
-            strings[i] = "" + i;
-            System.out.println(strings[i]);
-        }
+        String s = "vgdecoderesult={\"invitationId\":140,\"arrivalDate\":\"2021-01-20 23:13:00\",\"leaveDate\":\"2021-01-21 02:00:00\",\"memberNum\":0}";
+        String[] split = s.split("=");
+        System.out.println(split[1]);
+        JSONObject jsonObject = JSON.parseObject(split[1]);
+        String invitationId = jsonObject.getString("invitationId");
+        System.out.println(invitationId);
+        String arrivalDate = jsonObject.getString("arrivalDate");
+        System.out.println(arrivalDate);
+        String leaveDate = jsonObject.getString("leaveDate");
+        System.out.println(leaveDate);
 
     }
 
