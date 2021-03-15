@@ -183,22 +183,22 @@ public class RSAUtils {
             KeyPair keyPair = getKeyPair();
 //            String privateKey = new String(Base64Utils.encoder(keyPair.getPrivate().getEncoded()));
 //            String publicKey = new String(Base64Utils.encoder(keyPair.getPublic().getEncoded()));
-            String privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKcegglU6V3yV7eVE2qoDNsa1eJr1RtWSbmic0PpEWFqlW5cU/9QUKGG9xiokVHNcS40NPlE32XixsHodDRE2hmDd+M1jhcQi7NPFIpN8+TkcAbcGjhlXOpMN2/XWQewgvUFQ1e9f62P8PGZNFT037P2iDDQVmfm25ZwCeoWki3PAgMBAAECgYB5hxv1AUR7RwI2xDfMdcxzgP5MmzHroUIXtmSv28sB1mo4SPfkUFlyPR1vVxXmMMm/WcO0CTuTcegrloj6gZ8/hCt1cOT1xCN5sB0vc/bj+hS+ZLEVLBuKpGq8I0RCWAOazeOHRz27JD1Jreuu+W5ME6hgCitFMgmYrIvAR4SKoQJBAOQ9woBq+liWMa+b/RGD6Q53xApV0B/Nk4RzGDxkNq9qmymAbANr73zuRk3A0cRMVHEBGLz+H99031iul3nQoecCQQC7cbnZo/O0sng5jlzdLO+HlVtAo9Wp2A5GTcmyvVnvj/5neZ/VKoQaosPQo2Pgx204LJWIKNT+i2kCQTkXI2fZAkEAsZjI5snXIOVFpiKXqXBeAU758RzSxFxfQ/mWyy8jSh2GvKVb5tGu2SRC+i9mSfsm3YN/71dCD8tOGyBHZ5cK0wJBAIVeJ6QpOW9qRIx/NKfSHyPTKzhU2eOc7JstIcPhYipHw/WP3h9nvtLM2JKMjrYSby222zYkB1iNjMuj6KED+hECQBewQIqTR4T6wX9lHoUkzewTFJQZXktDU97HcArRRdmOAJOYGoPznDfutrnAVJMx2qb0FdvhxlvS9X+YGdo8dNc=";
-            String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnHoIJVOld8le3lRNqqAzbGtXia9UbVkm5onND6RFhapVuXFP/UFChhvcYqJFRzXEuNDT5RN9l4sbB6HQ0RNoZg3fjNY4XEIuzTxSKTfPk5HAG3Bo4ZVzqTDdv11kHsIL1BUNXvX+tj/DxmTRU9N+z9ogw0FZn5tuWcAnqFpItzwIDAQAB";
-            System.out.println("私钥:" + privateKey);
-            System.out.println("公钥:" + publicKey);
+            String privateKey = "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAJvX3i95cmybxxebH1QpwuB2N1j1BDTSTHltkNeN6Gy8Hgop353f4cmvcdCzxQ7uq9BYxy6GkKFizsE0RxFM59pWNc67yomnXjuv47GbOfLnTciZ+jpucxrcxRyN3va/2IV3wxmqaUt9j03QJ4g2UdLp+Lvc574jGPAZ+6TKuIqlAgMBAAECgYB5j3iQL3tBnIE/uJBHZgvMamnhybzuNtvQG9bPTLHvnw0PgHoc+3VzjJaK5K7hZuo+KgG0GOLX/+qmadDFfeea/8Xk/XGji6VlFMXFdHYYp6nX9UpB+HBH3DkBM+M+HvxquElm87oNrcIyjvxvHjdp474ETArBJ5XTiC8ALqO0AQJBAM3D935Tts4K8dF5SRu9VVQMMfRkjCUO8/9c/i7wWxCmJu3a3sf/llsD6zJp7QXqP4uX67yIdZc2IGQWVzX93bUCQQDB49XH96j1AP8Po2f3S9VvBvBPrewhPLqNmQIFpnxDnbA+Kw7o+mgYcwaL4LXlxnvBiJhPFwZFa8UQWCkixY8xAkEAyRMmiMlvy3uAga4fFj934fEk4+lZ1mD9aV9LeT0iEGv9gNQwfoqyOHDk5tgCapRV0qj8EbncB486KfR29ukFPQJBALGjmF4ZXcb7HrSpNbuw0t9iMBIQeuMIzLKmmN+sZPVeJ/cNZB+4LF8aI8lMG9tlOkVabJEpuyknT+llnGqrLkECQQC8LJCZ71akOn4KYnVY8Eqa2UK5siBb48hnln/14bh0VrgzY3+8PqHAEeg+gCehcqK62BVAXm4S9QJr+B7hl55d";
+            String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCb194veXJsm8cXmx9UKcLgdjdY9QQ00kx5bZDXjehsvB4KKd+d3+HJr3HQs8UO7qvQWMcuhpChYs7BNEcRTOfaVjXOu8qJp147r+Oxmzny503Imfo6bnMa3MUcjd72v9iFd8MZqmlLfY9N0CeINlHS6fi73Oe+IxjwGfukyriKpQIDAQAB";
+            System.out.println("private key:" + privateKey);
+            System.out.println("public key:" + publicKey);
             // RSA加密
             String data = "1234";
             String encryptData = encrypt(data, getPublicKey(publicKey));
-            System.out.println("加密后内容:" + encryptData);
+            System.out.println("after encrypt:" + encryptData);
             // RSA解密
             String decryptData = decrypt(encryptData, getPrivateKey(privateKey));
-            System.out.println("解密后内容:" + decryptData);
+            System.out.println("after decrypt:" + decryptData);
             // RSA签名
             String sign = sign(data, getPrivateKey(privateKey));
             // RSA验签 todo
             boolean result = verify(data, getPublicKey(publicKey), sign);
-            System.out.print("验签结果:" + result);
+            System.out.print("verify signature:" + result);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.print("加解密异常");
