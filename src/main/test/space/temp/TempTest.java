@@ -34,14 +34,8 @@ public class TempTest {
 
     @Test
     public void test2() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("jack");
-        list.add("tom");
-        System.out.println(list);
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("mary");
-        arrayList.add("Jimi");
-        list.addAll(arrayList);
-        System.out.println(list);
+        String s = "hello world";
+        String replace = s.replace(" ", "%20");
+        System.out.println(replace);
     }
 }

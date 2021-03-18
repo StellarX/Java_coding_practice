@@ -21,33 +21,33 @@ import io.jsonwebtoken.SignatureAlgorithm;
  */
 public class JwtDemo {
     /**
-     * 1¡¢Ñ¡ÔñÇ©ÃûµÄËã·¨
-     * 2¡¢Éú³ÉÇ©ÃûµÄÃÜÔ¿
-     * 3¡¢¹¹½¨TokenĞÅÏ¢
-     * 4¡¢ÀûÓÃËã·¨ºÍÃÜÔ¿Éú³ÉToken
+     * 1ã€é€‰æ‹©ç­¾åçš„ç®—æ³•
+     * 2ã€ç”Ÿæˆç­¾åçš„å¯†é’¥
+     * 3ã€æ„å»ºTokenä¿¡æ¯
+     * 4ã€åˆ©ç”¨ç®—æ³•å’Œå¯†é’¥ç”ŸæˆToken
      */
     public static String createToken() {
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-        byte[] secretBytes = DatatypeConverter.parseBase64Binary("JWT-TOKEN");//×Ö½ÚÊı×é
-        Key signingKey = new SecretKeySpec(secretBytes, signatureAlgorithm.getJcaName());//¸ù¾İ×Ö½ÚÊı×éÉú³ÉHS256ÃÜÔ¿
+        byte[] secretBytes = DatatypeConverter.parseBase64Binary("JWT-TOKEN");//å­—èŠ‚æ•°ç»„
+        Key signingKey = new SecretKeySpec(secretBytes, signatureAlgorithm.getJcaName());//æ ¹æ®å­—èŠ‚æ•°ç»„ç”ŸæˆHS256å¯†é’¥
         Map<String, Object> claims = new HashMap<String, Object>();
         claims.put("username", "token");
         claims.put("role", "admin");
         JwtBuilder builder = Jwts.builder()
-//                .setHeader()  //header¿ÉÒÔÖ±½ÓÊ¡ÂÔ£¬Ê¹ÓÃÄ¬ÈÏµÄ
+//                .setHeader()  //headerå¯ä»¥ç›´æ¥çœç•¥ï¼Œä½¿ç”¨é»˜è®¤çš„
                 .setClaims(claims)
-                .setId("tokenid") //¼´jti
+                .setId("tokenid") //å³jti
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis()+10*60*1000)) //ÉèÖÃ¹ıÆÚÊ±¼äÎª10min
+                .setExpiration(new Date(System.currentTimeMillis()+10*60*1000)) //è®¾ç½®è¿‡æœŸæ—¶é—´ä¸º10min
                 .signWith(signatureAlgorithm, signingKey); // TODO: 2020/11/18 ??? key
         String compact = builder.compact();
-        System.out.println(compact);//Õâ¸ö¾ÍÊÇÉú³ÉµÄtoken
+        System.out.println(compact);//è¿™ä¸ªå°±æ˜¯ç”Ÿæˆçš„token
         return compact;
     }
 
     public static Claims parseToken(String token) {
         return Jwts.parser()
-                .setSigningKey(DatatypeConverter.parseBase64Binary("JWT-TOKEN"))//Ìá¹©Ç©Ãû
+                .setSigningKey(DatatypeConverter.parseBase64Binary("JWT-TOKEN"))//æä¾›ç­¾å
                 .parseClaimsJws(token)
                 .getBody();
     }

@@ -1,7 +1,7 @@
-package functionalinterface;
+package space.functionalinterface;
 
 /**
- * Lambda ±í´ïÊ½ÃâÈ¥ÁËÊ¹ÓÃÄäÃû·½·¨µÄÂé·³£¬²¢ÇÒ¸øÓèJava¼òµ¥µ«ÊÇÇ¿´óµÄº¯Êý»¯µÄ±à³ÌÄÜÁ¦
+ * Lambda ï¿½ï¿½ï¿½Ê½ï¿½ï¿½È¥ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é·³ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸ï¿½ï¿½ï¿½Javaï¿½òµ¥µï¿½ï¿½ï¿½Ç¿ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class LambdaDemo {
     static String salutation = "Hello! ";
@@ -26,16 +26,16 @@ public class LambdaDemo {
     public static void main(String[] args) {
         LambdaDemo lambdaDemo = new LambdaDemo();
 
-        // ÀàÐÍÉùÃ÷
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         MathOperation addition = (int a, int b) -> a + b;
 
-        // ²»ÓÃÀàÐÍÉùÃ÷
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         MathOperation subtraction = (a, b) -> a - b;
 
-        // ´óÀ¨ºÅÖÐµÄ·µ»ØÓï¾ä
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         MathOperation multiplication = (int a, int b) -> { return a * b; };
 
-        // Ã»ÓÐ´óÀ¨ºÅ¼°·µ»ØÓï¾ä
+        // Ã»ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         MathOperation division = (int a, int b) -> a / b;
 
         MathOperation test = (a,b) -> 5;
@@ -52,11 +52,11 @@ public class LambdaDemo {
         System.out.println(lambdaDemo.operate(1,1,test));
         System.out.println(test.operation(1, 1));
 
-        // ²»ÓÃÀ¨ºÅ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         GreetingService greetService1 = message ->
                 System.out.println("Hello " + message);
 
-        // ÓÃÀ¨ºÅ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         GreetingService greetService2 = (message) ->
                 System.out.println("Hello " + message);
 

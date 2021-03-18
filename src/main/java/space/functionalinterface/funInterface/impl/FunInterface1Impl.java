@@ -1,6 +1,6 @@
-package functionalinterface.funInterface.impl;
+package space.functionalinterface.funInterface.impl;
 
-import functionalinterface.funInterface.FunInterface1;
+import space.functionalinterface.funInterface.FunInterface1;
 
 public class FunInterface1Impl implements FunInterface1 {
     @Override
