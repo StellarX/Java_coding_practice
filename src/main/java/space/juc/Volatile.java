@@ -1,16 +1,11 @@
-package jucdemo;
+package space.juc;
 
-class Mydata{
-    volatile int number = 0;
-//    int number = 0;
-    public void addTo60(){
-        this.number = 60;
-    }
-}
+import space.entity.Mydata;
 
 /**
- * ÑéÖ¤volatileµÄ¿É¼ûĞÔ
- * @author space
+ * @Description éªŒè¯volatileçš„å¯è§æ€§
+ * @Author space
+ * @Date 2021/3/26
  */
 
 public class Volatile {
@@ -29,8 +24,10 @@ public class Volatile {
         }, "aaa").start();
 
         while (mydata.number == 0){
-//            System.out.println(mydata.number); // todo ÎªÊ²Ã´¼ÓÁËÕâÒ»¾ä£¬mainÏß³Ì¾Í¿ÉÒÔ´òÓ¡³öÏÂÃæµÄoverÁËÄØ£¿ ¶ø²»¼ÓµÄ»°¾ÍÒ»Ö±Ñ­»·
-        }; // Èç¹ûnumberÃ»ÓĞ±»volatileĞŞÊÎ£¬ÔòmainÏß³Ì¶Áµ½µÄnumberÒ»Ö±ÊÇ0
+//            System.out.println(Thread.activeCount());
+//            System.out.println("test");//todo è¿™é‡Œä¸ºä»€ä¹ˆåŠ ä¸Šä»»æ„è¯­å¥å°±èƒ½overäº†ï¼Œè¯´æ˜ä¸åŠ volatileä¹Ÿèƒ½åˆ·æ–°ä¸»å†…å­˜ å‚è€ƒå‘¨é˜³04èŠ‚
+//            System.out.println(Thread.currentThread().getName() + ": "+mydata.number);
+        };
 
         System.out.println(Thread.currentThread().getName() + "\t over");
     }
