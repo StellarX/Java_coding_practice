@@ -1,3 +1,5 @@
+package space.juc;
+
 /**
  * 线程的几种运行方式  todo
  */

@@ -1,35 +1,21 @@
-package jucdemo;
+package space.juc;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
-
-/**
- * CAS demo
- * @Author:space
- *
- */
-@Getter
-@ToString
-@AllArgsConstructor
-class User{
-	String username;
-	int age;
-}
+import space.entity.User;
 
 public class CASDemo {
 
 	public static void main(String[] args) {
 
 		AtomicInteger atomicInteger = new AtomicInteger(5);
+//		atomicInteger.getAndIncrement();
+		User z3 = new User("z3", 22);
+		User li4 = new User("li4", 25);
 
-//		User z3 = new User("z3", 22);
-//		User li4 = new User("li4", 25);
-
-//		AtomicReference<User> atomicReference = new AtomicReference<User>();
-//		atomicReference.set(z3);
+		AtomicReference<User> atomicReference = new AtomicReference<User>();
+		atomicReference.set(z3);
 //		System.out.println(atomicReference.compareAndSet(z3, li4));
 
 
@@ -37,19 +23,21 @@ public class CASDemo {
 
 		new Thread(() -> {
 			int stamp = asr.getStamp();
-			System.out.println(Thread.currentThread().getName() + " 的版本号为：" + stamp);
+			System.out.println(Thread.currentThread().getName() + " \t stamp:" + stamp);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			asr.compareAndSet(100, 101, asr.getStamp(), asr.getStamp() + 1 );
+			System.out.println(Thread.currentThread().getName() + " \t stamp:" + asr.getStamp());
 			asr.compareAndSet(101, 100, asr.getStamp(), asr.getStamp() + 1 );
+			System.out.println(Thread.currentThread().getName() + " \t stamp:" + asr.getStamp());
 		}).start();
 
 		new Thread(() -> {
 			int stamp = asr.getStamp();
-			System.out.println(Thread.currentThread().getName() + " 的版本号为：" + stamp);
+			System.out.println(Thread.currentThread().getName() + " \t stamp:" + stamp);
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
