@@ -19,13 +19,29 @@ class Outer{
     int x = 3;
     public void method(){
 
-        int a = 4;
+        new A(){//匿名局部内部类
+            void show(){
+                System.out.println(x);
+            }
+        }.show();
+
+        A a = new A(){//多态，向上转型
+            void show(){
+                System.out.println(x);
+            }
+            void fun(){
+                System.out.println(4);
+            }
+        };
+        a.show(); //注意这里就不能调用fun了，因为fun是子类特有的
+
+        int d = 4;
         class Inner{
             //local inner class
-            int b = 5;
+            final int b = 5;
             void fun(){
-                System.out.println(Outer.this.x);
-                System.out.println(a);
+                System.out.println(x);
+                System.out.println(d);
                 System.out.println(b);
             }
         }
@@ -40,4 +56,8 @@ class Outer{
             System.out.println("inner2 class public method");
         }
     }
+}
+
+abstract class A{
+    abstract void show();
 }
