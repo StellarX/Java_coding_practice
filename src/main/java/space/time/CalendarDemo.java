@@ -9,8 +9,8 @@ import java.util.Calendar;
 public class CalendarDemo {
     public static void main(String[] args) {
 //        获取基本时间元素();
-        改变一周的开始星期();
-//        设置时间();
+//        改变一周的开始星期();
+        设置时间();
 
 //        System.out.println(cal.getCalendarType());
     }
@@ -31,6 +31,7 @@ public class CalendarDemo {
         System.out.println("一周的第一天:" + cal.getFirstDayOfWeek());//默认是周日的编号，即1
         cal.setFirstDayOfWeek(Calendar.MONDAY);
         System.out.println("一周的第一天:" + cal.getFirstDayOfWeek());//变成周一的编号了，即2
+        System.out.println(cal.get(Calendar.DAY_OF_WEEK));
 
     }
     public static void 设置时间(){
@@ -44,6 +45,9 @@ public class CalendarDemo {
 
         cal.add(Calendar.SECOND, 1);//add 一秒， 会自动变成下一个正确的时间
         System.out.println(cal.getTime());
+
+        cal.add(Calendar.DATE, -1);
+        System.out.println("date - 1 = " + cal.getTime());
 
         cal.set(2018, Calendar.FEBRUARY, 31, 23, 59, 59);//设置不存在的时间会报错
         System.out.println(cal);
