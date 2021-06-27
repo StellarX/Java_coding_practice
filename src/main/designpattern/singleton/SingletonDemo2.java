@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * Lazy loading demo2: 解决demo1的漏洞，添加一个标记;  但我们又可以通过反射去修改这个标记
+ * Lazy loading demo2: 锟斤拷锟絛emo1锟斤拷漏锟斤拷锟斤拷锟斤拷锟揭伙拷锟斤拷锟斤拷;  锟斤拷锟斤拷锟斤拷锟街匡拷锟斤拷通锟斤拷锟斤拷锟斤拷去锟睫革拷锟斤拷锟斤拷锟斤拷
  * @author space
  * @date 2020/10/5 12:51
  */
@@ -42,7 +42,7 @@ public class SingletonDemo2 {
     }
 
     /**
-     * 通过反射去修改变量值
+     * 通锟斤拷锟斤拷锟斤拷去锟睫改憋拷锟斤拷值
      */
     public static void crack() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {
         Constructor<SingletonDemo2> demo1Constructor = SingletonDemo2.class.getDeclaredConstructor(null);

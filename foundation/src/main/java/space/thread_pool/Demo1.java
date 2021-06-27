@@ -2,10 +2,9 @@ package space.thread_pool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * @briefing Ïß³Ì³ØµÄ´´½¨ºÍÊ¹ÓÃ
+ * @briefing ï¿½ß³Ì³ØµÄ´ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
  * @author space
  * @date 2020/10/8 21:17
  */
@@ -33,7 +32,7 @@ public class Demo1 {
             threadPool.shutdown();
         }
 
-        //¸¨Öú¹¤¾ßÀà
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //        Executors.callable()
 
     }

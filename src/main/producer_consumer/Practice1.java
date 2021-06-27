@@ -5,8 +5,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @briefing Á·Ï°lock¡¢conditionµÄÊ¹ÓÃ
- * ¶àÏß³ÌÖ®¼äË³Ðòµ÷ÓÃ£¬ÊµÏÖA¡¢B¡¢CÈý¸öÏß³ÌÆô¶¯£¬A´òÓ¡5´Î£¬B´òÓ¡10´Î£¬C´òÓ¡15´Î£¬È»ºóÑ­»·Èç´Ë
+ * @briefing ï¿½ï¿½Ï°lockï¿½ï¿½conditionï¿½ï¿½Ê¹ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ß³ï¿½Ö®ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Ã£ï¿½Êµï¿½ï¿½Aï¿½ï¿½Bï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½Ó¡5ï¿½Î£ï¿½Bï¿½ï¿½Ó¡10ï¿½Î£ï¿½Cï¿½ï¿½Ó¡15ï¿½Î£ï¿½È»ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author space
  * @date 2020/10/6 22:45
  */
@@ -18,7 +18,7 @@ class PrintWord{
     private int flag = 1;
 
     public void print5() {
-//        lock.lock(); // todo ²»¼ÓËøÎªÊ²Ã´»áÅ×java.lang.IllegalMonitorStateException
+//        lock.lock(); // todo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÊ²Ã´ï¿½ï¿½ï¿½ï¿½java.lang.IllegalMonitorStateException
         while(flag != 1) {
             try {
                 c1.await();

@@ -3,7 +3,7 @@ import lombok.SneakyThrows;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @briefing ËÀËøÊ¾Àý³ÌÐò
+ * @briefing ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author space
  * @date 2020/10/10 16:50
  */

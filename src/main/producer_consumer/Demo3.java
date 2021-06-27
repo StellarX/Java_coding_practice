@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @briefing Ê¹ÓÃ×èÈû¶ÓÁĞÊµÏÖÉú²úÕßÏû·ÑÕß£¬Ã¿Éú³ÉÒ»¸öÂíÉÏÏû·ÑÒ»¸ö£¬flagÎªtrue¾ÍÒ»Ö±ÏÂÈ¥£¬falseÔòÍ£Ö¹
+ * @briefing Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½flagÎªtrueï¿½ï¿½Ò»Ö±ï¿½ï¿½È¥ï¿½ï¿½falseï¿½ï¿½Í£Ö¹
  * @author space
  * @date 2020/10/7 20:45
  */
@@ -13,7 +13,7 @@ class Res3{
     public volatile boolean flag = true;
     private BlockingQueue<String> blockingQueue = null;
     private AtomicInteger atomicInteger = new AtomicInteger(0);
-    public Res3(BlockingQueue<String> blockingQueue){ // ×¢ÒâÕâÀï×îºÃ´«½Ó¿Ú
+    public Res3(BlockingQueue<String> blockingQueue){ // ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½Ó¿ï¿½
         this.blockingQueue = blockingQueue;
         System.out.println(blockingQueue.getClass().getName());
     }
@@ -70,7 +70,7 @@ public class Demo3 {
 
         TimeUnit.SECONDS.sleep(5);
         System.out.println();
-        System.out.println("mainÏß³Ì½ĞÍ£...");
+        System.out.println("mainï¿½ß³Ì½ï¿½Í£...");
         r.flag = false;
     }
 }

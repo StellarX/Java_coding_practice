@@ -4,8 +4,8 @@ import enumeration.EnumDemo;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Countdownlatch的作用演示
- * 作用：让一些线程阻塞直到另一些线程完成一系列操作后才被唤醒
+ * Countdownlatch锟斤拷锟斤拷锟斤拷锟斤拷示
+ * 锟斤拷锟矫ｏ拷锟斤拷一些锟竭筹拷锟斤拷锟斤拷直锟斤拷锟斤拷一些锟竭筹拷锟斤拷锟揭幌碉拷胁锟斤拷锟斤拷锟脚憋拷锟斤拷锟斤拷
  * @author space
  * @date 2020/10/3
  */

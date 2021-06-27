@@ -1,7 +1,7 @@
 package space.copy;
 
 /**
- * @comment: Ç³¿½±´
+ * @comment: Ç³ï¿½ï¿½ï¿½ï¿½
  */
 public class CopyTest {
     public static void main(String[] args) throws CloneNotSupportedException {

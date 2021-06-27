@@ -80,7 +80,7 @@ public class AdjGraph {
 				if(arr[i][j] != INF && arr[i][j] != 0) {
 					Arcnode arcnode = new Arcnode(arr[i][j]);
 					arcnode.no = j;
-					//Î²²å·¨
+					//Î²ï¿½å·¨
 					if(g.adjlist.get(i).firstarc == null)
 						g.adjlist.get(i).firstarc = arcnode;
 					else {
@@ -90,7 +90,7 @@ public class AdjGraph {
 						}
 						p.nextarc = arcnode;
 					}
-					//Í·²å·¨£¬¼òµ¥Ò»µã£¬Ö»Ðè2ÐÐ
+					//Í·ï¿½å·¨ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ã£¬Ö»ï¿½ï¿½2ï¿½ï¿½
 //					arcnode.nextarc = g.adjlist.get(i).firstarc;
 //					g.adjlist.get(i).firstarc = arcnode;
 				}

@@ -6,16 +6,16 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @briefing Ê¹ÓÃJDK1.5Ìá¹©µÄlockÊµÏÖ£¨¶à¸ö£©Éú²úÕß£¨¶à¸ö£©Ïû·ÑÕß°¸Àý
+ * @briefing Ê¹ï¿½ï¿½JDK1.5ï¿½á¹©ï¿½ï¿½lockÊµï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½ï¿½ï¿½
  * @author space
  * @date 2020/10/6 18:38
  */
 
-// todo ½«¼Ó¼õ²Ù×÷·â×°µ½Res2ÄÚ²¿
+// todo ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½Res2ï¿½Ú²ï¿½
 class Res2{
     protected int apple = 0;
     protected final Lock lock = new ReentrantLock();
-    protected final Condition condition_pro = lock.newCondition(); // ½«Éú²úÕßºÍÏû·ÑÕß×èÈûµ½²»Í¬µÄcondition
+    protected final Condition condition_pro = lock.newCondition(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½condition
     protected final Condition condition_con = lock.newCondition();
 }
 
@@ -31,7 +31,7 @@ class Producer2 implements Runnable{
     public void run() {
         while (true){
             r.lock.lock();
-            while (r.apple == 1) r.condition_pro.await(); // await·½·¨Ò²»áÊÍ·ÅËø
+            while (r.apple == 1) r.condition_pro.await(); // awaitï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½
             r.apple = 1;
             System.out.println(Thread.currentThread().getName() + " apple ++ " + r.apple);
             r.condition_con.signalAll();

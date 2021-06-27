@@ -1,7 +1,7 @@
 import lombok.SneakyThrows;
 
 /**
- * @briefing Ê¹ÓÃ waitºÍnotify¡¢notifyAll·½·¨ ÒÔ¼° synchronizedÍ¬²½´úÂë¿é ÊµÏÖÉú²úÕßÏû·ÑÕßÄ£Ê½ (2¸öÉú²úÕß£¬ 1¸öÏû·ÑÕß)
+ * @briefing Ê¹ï¿½ï¿½ waitï¿½ï¿½notifyï¿½ï¿½notifyAllï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ synchronizedÍ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ (2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
  * @author space
  * @date 2020/10/6 13:09
  */
@@ -23,7 +23,7 @@ class Producer1 implements Runnable {
     public void run() {
         while (true) {
             synchronized (r) {
-                while (r.apple == 1) r.wait(); // Ê¹µ±Ç°Ïß³ÌµÈ´ý£¬²¢·ÅÆúËø todo Õâ¸ör.wait() ºÍ Producer ÒÔ¼° rµ½µ×ÊÇÊ²Ã´¹ØÏµ£¿
+                while (r.apple == 1) r.wait(); // Ê¹ï¿½ï¿½Ç°ï¿½ß³ÌµÈ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ todo ï¿½ï¿½ï¿½r.wait() ï¿½ï¿½ Producer ï¿½Ô¼ï¿½ rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½Ïµï¿½ï¿½
                 r.apple++;
                 System.out.println(Thread.currentThread().getName() + " apple ++  = " + r.apple);
                 r.notifyAll();

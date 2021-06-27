@@ -3,7 +3,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * @briefing ÔËÐÐÏß³ÌµÄµÚÈýÖÖ·½·¨ ÊµÏÖcallable½Ó¿Ú
+ * @briefing ï¿½ï¿½ï¿½ï¿½ï¿½ß³ÌµÄµï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ Êµï¿½ï¿½callableï¿½Ó¿ï¿½
  * @author space
  * @date 2020/10/8 11:19
  */
@@ -25,11 +25,11 @@ public class CallableDemo {
         FutureTask<Integer> futureTask = new FutureTask<>(new MyThread());
 
         new Thread(futureTask, "aaa").start();
-//        new Thread(futureTask, "bbb").start();// bbb²»»áÖ´ÐÐ
+//        new Thread(futureTask, "bbb").start();// bbbï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
 
 
-        System.out.println("return : " + futureTask.get());// get¾¡Á¿Íùºó·Å
-//        while(!futureTask.isDone()){ // todo ÒªÕâ¸öÓÐÊ²Ã´ÓÃ£¿
+        System.out.println("return : " + futureTask.get());// getï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//        while(!futureTask.isDone()){ // todo Òªï¿½ï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½Ã£ï¿½
 //        }
 
         System.out.println(Runtime.getRuntime().availableProcessors());

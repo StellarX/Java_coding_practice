@@ -4,8 +4,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * Lazy loading demo1: ÓÉÓÚ·´Éä¿ÉÒÔÆÆ½âµ¥ÀýÄ£Ê½£¬ËùÒÔÐèÒªÔÚ¹¹Ôì·½·¨Àï¼ÓËø£»
- * µ«»¹ÊÇÓÐÂ©¶´£ºÈç¹û2´Î¶¼Ê¹ÓÃ·´Éä´´½¨¶ÔÏó£¬ÔòsingletonDemo1»áÒ»Ö±µÈÓÚnull (crackDemo2)
+ * Lazy loading demo1: ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½âµ¥ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ú¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½Î¶ï¿½Ê¹ï¿½Ã·ï¿½ï¿½ä´´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½singletonDemo1ï¿½ï¿½Ò»Ö±ï¿½ï¿½ï¿½ï¿½null (crackDemo2)
  * @author space
  * @date 2020/10/5 11:16
  */

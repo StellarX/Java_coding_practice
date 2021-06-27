@@ -3,7 +3,7 @@ package space.thread_pool;
 import java.util.concurrent.*;
 
 /**
- * @briefing ×Ô¶¨ÒåÏß³Ì³Ø ²âÊÔ4ÖÖ¾Ü¾ø²ßÂÔ
+ * @briefing ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ß³Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½4ï¿½Ö¾Ü¾ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author space
  * @date 2020/10/10 10:57
  */

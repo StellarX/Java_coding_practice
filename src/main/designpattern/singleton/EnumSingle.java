@@ -4,8 +4,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * Ã¶¾Ù±¾Éí¾ÍÊÇµ¥ÀýµÄ  demo³¢ÊÔÆÆ½âÃ¶¾Ùµ¥Àý
- * todo ÁË½âÃ¶¾Ùµ¥ÀýÄ£Ê½ https://blog.csdn.net/weixin_36586120/article/details/105522491
+ * Ã¶ï¿½Ù±ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½  demoï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½Ã¶ï¿½Ùµï¿½ï¿½ï¿½
+ * todo ï¿½Ë½ï¿½Ã¶ï¿½Ùµï¿½ï¿½ï¿½Ä£Ê½ https://blog.csdn.net/weixin_36586120/article/details/105522491
  * @author space
  * @date 2020/10/5 16:10
  */
@@ -32,7 +32,7 @@ class Test{
     public static void tryToCrack() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         EnumSingle instance1 = EnumSingle.INSTANCE;
         Constructor<EnumSingle> declaredConstructor = EnumSingle.class
-                .getDeclaredConstructor(String.class, int.class); // ÓÐ²Î¹¹Ôì
+                .getDeclaredConstructor(String.class, int.class); // ï¿½Ð²Î¹ï¿½ï¿½ï¿½
         declaredConstructor.setAccessible(true);
         EnumSingle instance2 = declaredConstructor.newInstance();
         System.out.println(instance1);// java.lang.IllegalArgumentException: Cannot reflectively create enum objects
