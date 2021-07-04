@@ -19,7 +19,7 @@ public class Consumer {
      */
     @RabbitListener(queues = DirectMQConfig.QUEUE_TEST1)
     public void consumeMessage1(Message message) {
-        System.out.println("这是监听test1得到的消息：======" + new String(message.getBody(), StandardCharsets.UTF_8));
+        System.out.println("test1队列收到：======" + new String(message.getBody(), StandardCharsets.UTF_8));
     }
 
     /**
@@ -27,9 +27,8 @@ public class Consumer {
      */
     @RabbitListener(queues = DirectMQConfig.QUEUE_TEST2)
     public void consumeMessage2(Message message) {
-        System.out.println("这是监听test2得到的消息：======" + new String(message.getBody(), StandardCharsets.UTF_8));
+        System.out.println("test2队列收到：======" + new String(message.getBody(), StandardCharsets.UTF_8));
     }
-
 }
 
 

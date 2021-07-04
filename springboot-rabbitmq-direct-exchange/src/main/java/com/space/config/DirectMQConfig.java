@@ -26,8 +26,8 @@ public class DirectMQConfig {
     /**
      * 绑定key，交换机绑定队列时需要指定
      */
-    public static final String BINDING_KEY_TEST1 = "direct_key1";
-    public static final String BINDING_KEY_TEST2 = "direct_key2";
+    public static final String BINDING_KEY_TEST1 = "binding_key1";
+    public static final String BINDING_KEY_TEST2 = "binding_key2";
 
     /**
      * 队列名称
@@ -63,13 +63,14 @@ public class DirectMQConfig {
      * 绑定交换机和队列
      */
     @Bean
-    public Binding test1Binding() {
-        return BindingBuilder.bind(test1Queue()).to(directExchange()).with(BINDING_KEY_TEST1);
+    public Binding test1Binding(DirectExchange directExchange, Queue test1Queue) {//这样写spring会自动按名称注入
+        return BindingBuilder.bind(test1Queue).to(directExchange).with(BINDING_KEY_TEST1);
     }
 
     @Bean
     public Binding test2Binding() {
         return BindingBuilder.bind(test2Queue()).to(directExchange()).with(BINDING_KEY_TEST2);
+        //修改队列的binding key后，需要删除交换机或删除原来的队列，不然原来的还是会存在
     }
 
     /**
@@ -90,7 +91,6 @@ public class DirectMQConfig {
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         return new RabbitTemplate(connectionFactory);
     }
-
 }
 
 
