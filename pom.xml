@@ -12,6 +12,7 @@
         <module>foundation</module>
         <module>springboot-rabbitmq</module>
         <module>springboot-rabbitmq-direct-exchange</module>
+        <module>springboot-websocket</module>
     </modules>
 
 </project>
