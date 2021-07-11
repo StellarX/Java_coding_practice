@@ -11,16 +11,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.space</groupId>
     <version>0.0.1-SNAPSHOT</version>
-    <artifactId>springboot-websocket</artifactId>
+    <artifactId>spring-framework</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -32,11 +28,5 @@
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.47</version>
-        </dependency>
     </dependencies>
-
 </project>

@@ -13,6 +13,7 @@
         <module>springboot-rabbitmq</module>
         <module>springboot-rabbitmq-direct-exchange</module>
         <module>springboot-websocket</module>
+        <module>spring-framework</module>
     </modules>
 
 </project>

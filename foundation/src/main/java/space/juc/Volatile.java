@@ -1,7 +1,7 @@
 package space.juc;
 
 import lombok.SneakyThrows;
-import space.entity.Mydata;
+import space.entity.MyData;
 
 /**
  * @Description 验证volatile的可见性、（是否保证）原子性
@@ -17,7 +17,7 @@ public class Volatile {
     }
 
     private static void testAtomic() throws InterruptedException {
-        Mydata mydata = new Mydata();
+        MyData mydata = new MyData();
         for (int i = 0; i < 20; i++){
             new Thread(() -> {
                 for (int j = 0; j < 1000; j++)
@@ -32,7 +32,7 @@ public class Volatile {
     }
 
     private static void testVisibility() {
-        Mydata mydata = new Mydata();
+        MyData mydata = new MyData();
         new Thread(() -> {
             System.out.println(Thread.currentThread().getName() + "\t come in");
             try {

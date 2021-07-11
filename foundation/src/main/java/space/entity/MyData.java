@@ -1,6 +1,6 @@
 package space.entity;
 
-public class Mydata {
+public class MyData {
 //        volatile public int number = 0;
     public int number = 0;
 //    AtomicInteger a = new AtomicInteger();
