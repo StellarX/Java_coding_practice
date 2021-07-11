@@ -1,4 +1,4 @@
-<html>
+<html lang="">
 <head>
     <title>Chat WebSocket</title>
 <!--    <script src="./js/sockjs-0.3.4.js"></script>-->
@@ -18,11 +18,12 @@
             }
 
             function connect() {
-                var socket = new SockJS('http://localhost:8080/chat');
-                stompClient = Stomp.over(socket);
+                var socket = new SockJS('http://localhost:8080/chat');//连接的 SockJS 的 endpoint 名称
+                stompClient = Stomp.over(socket);//表示使用 STOMP 来创建 WebSocket 客户端
                 stompClient.connect({}, function(frame) {
                     setConnected(true);
                     console.log('Connected: ' + frame);
+                    //订阅 /topic/messages 发送来的消息，也就是我们在 Controller 方法上添加的 @SendTo 注解的参数
                     stompClient.subscribe('/topic/messages', function(messageOutput) {
                         showMessageOutput(JSON.parse(messageOutput.body));
                     });
@@ -40,6 +41,9 @@
             function sendMessage() {
                 var from = document.getElementById('from').value;
                 var text = document.getElementById('text').value;
+                //发送一条消息到服务端
+                // stompClient.send("/chatting", {},
+                //     JSON.stringify({'from':from, 'text':text}));
                 stompClient.send("/app/chatting", {},
                   JSON.stringify({'from':from, 'text':text}));
             }

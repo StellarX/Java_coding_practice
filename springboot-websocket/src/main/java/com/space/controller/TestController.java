@@ -27,7 +27,7 @@ public class TestController {
     public ResponseEntity<String> pushToWeb(@PathVariable("message") String message,
                                             @PathVariable("toUserId") String toUserId) throws IOException {
         log.debug("toUserId:{}", toUserId);
-        WebSocketServer.sendInfo(message, toUserId);
+        WebSocketServer.appointSend(message, toUserId);
         return ResponseEntity.ok("MSG SEND SUCCESS");
     }
 }

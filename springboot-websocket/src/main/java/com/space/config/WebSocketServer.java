@@ -14,6 +14,13 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+/**
+ * @Description 此类是多例的，每当有客户端发起连接请求时，就会产生一个新的WebSocketServer
+ *
+ * ServerEndpoint 这个注解有什么作用？
+ * 这个注解用于标识作用在类上，它的主要功能是把当前类标识成一个WebSocket的服务端
+ * 注解的值是客户端连接访问的URL地址
+ */
 @ServerEndpoint("/imserver/{userId}")
 @Component
 @Slf4j
@@ -21,11 +28,20 @@ public class WebSocketServer {
 
     /**静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。*/
     private static int onlineCount = 0;
-    /**concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。*/
+
+    /**
+     * concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
+     */
     private static final ConcurrentHashMap<String, WebSocketServer> webSocketMap = new ConcurrentHashMap<>();
-    /**与某个客户端的连接会话，需要通过它来给客户端发送数据*/
+
+    /**
+     * 与某个客户端的连接会话，需要通过它来给客户端发送数据
+     */
     private Session session;
-    /**接收userId*/
+
+    /**
+     * 标识当前连接客户端的用户名
+     */
     private String userId="";
 
     /**
@@ -33,14 +49,14 @@ public class WebSocketServer {
     @OnOpen
     public void onOpen(Session session,@PathParam("userId") String userId) {
         this.session = session;
-        this.userId=userId;
+        this.userId = userId;
         if(webSocketMap.containsKey(userId)){
             webSocketMap.remove(userId);
             webSocketMap.put(userId,this);
-            //加入set中
+            //加入map中
         }else{
             webSocketMap.put(userId,this);
-            //加入set中
+            //加入map中
             addOnlineCount();
             //在线数加1
         }
@@ -109,14 +125,28 @@ public class WebSocketServer {
     }
 
     /**
-     * 发送自定义消息
+     * 指定发送 自定义消息
      * */
-    public static void sendInfo(String message, @PathParam("userId") String userId) throws IOException {
+    public static void appointSend(String message, @PathParam("userId") String userId) throws IOException {
         log.info("发送消息到:"+userId+"，报文:"+message);
         if(!userId.isEmpty() && webSocketMap.containsKey(userId)){
             webSocketMap.get(userId).sendMessage(message);
         }else{
             log.error("用户"+userId+",不在线！");
+        }
+    }
+
+    /**
+     * 群发
+     */
+    public void groupSending(String message){
+        log.info("start group sending");
+        for (String name : webSocketMap.keySet()){
+            try {
+                webSocketMap.get(name).session.getBasicRemote().sendText(message);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
