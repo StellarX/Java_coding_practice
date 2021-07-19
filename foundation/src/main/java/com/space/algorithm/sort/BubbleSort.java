@@ -16,16 +16,16 @@ public class BubbleSort {
 
 	private static void bubbleSortOptimized(int[] a) {
 		for (int i = 0; i < a.length - 1; i++){
-			boolean flag = false;
+			boolean isMove = false;
 			for (int j = 0; j < a.length - i - 1; j++){
 				if (a[j] > a[j+1]){
 					int tmp = a[j];
 					a[j] = a[j+1];
 					a[j+1] = tmp;
-					flag = true;
+					isMove = true;
 				}
 			}
-			if (!flag) break;
+			if (!isMove) break;
 		}
 	}
 
